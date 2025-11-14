@@ -15,7 +15,7 @@ clock = pygame.time.Clock()
 # Set game value
 SNAKE_SIZE = 20
 head_x = WINDOW_WIDTH // 2
-head_y = WINDOW_HEIGHT + 100 // 2
+head_y = WINDOW_HEIGHT // 2 + 100
 snake_dx = 0
 snake_dy = 0
 score = 0
@@ -24,7 +24,7 @@ GREEN = (0, 255, 0)
 DARKGREEN = (10, 50, 10)
 RED = (255, 0, 0)
 DARKRED = (150, 0, 0)
-White = (255, 255, 255)
+WHITE = (255, 255, 255)
 # Set fonts
 font = pygame.font.SysFont('gabriola', 48)
 # Set text
@@ -54,6 +54,7 @@ apple_rect = pygame.draw.rect(display_surface, RED, apple_coord)
 
 head_coord = (head_x, head_y, SNAKE_SIZE, SNAKE_SIZE)
 head_rect = pygame.draw.rect(display_surface, GREEN, head_coord)
+
 # The main game loop
 running = True
 while running:
@@ -74,14 +75,19 @@ while running:
     # Check for collisions
 
     # Update HUD
-
+    score_text = font.render(f"Score: {score}", True, GREEN, DARKRED)
+    score_rect = score_text.get_rect()
     # Fill the surface
-
+    display_surface.fill(WHITE)
     # Blit HUD
-
+    display_surface.blit(title_text, title_rect)
+    display_surface.blit(score_text, score_rect)
     # Blit assets
-
+    pygame.draw.rect(display_surface, GREEN, head_coord)
+    pygame.draw.rect(display_surface, RED, apple_coord)
     # Update display and tick clock
+    pygame.display.update()
+    clock.tick(FPS)
 
 # End the game
 pygame.quit()

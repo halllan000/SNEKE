@@ -110,12 +110,11 @@ while running:
     if head_rect.left < 0 or head_rect.right > WINDOW_WIDTH or head_rect.top < 0 or head_rect.bottom > WINDOW_HEIGHT or head_coord in body_coords:
         # TODO: call display_surface's blit function passing in game_over_text and game_over_rect
         # TODO: repeat for continue
-        # TODO: call pygame.display_update()
+        # TODO: call pygame.display.update()
 
         #Pause the game until the player presses a key, then reset the game
         # TODO: assign True to is_paused
 
-        pass # TODO: remove this line.
 
     # Check for unpause.  If so reset game.
     while is_paused:
@@ -130,7 +129,6 @@ while running:
                 # TODO: assign 0 to score
                 # TODO: assign the default values to head_x, head_y, head_coord, body_coords, snake_dx, snake_dy
                 # TODO: assign False to is_paused
-        pass # TODO: remove this line.
 
 
     # Check for collisions
@@ -143,7 +141,6 @@ while running:
         # TODO: assign (apple_x, apple_y, SNAKE_SIZE, SNAKE_SIZE) to apple_coord
 
         # TODO: call body_coords' append method and pass in head_coord for it's argument
-        pass # TODO: remove this line.
 
 
     # Update HUD

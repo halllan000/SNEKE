@@ -146,7 +146,7 @@ while running:
     for body in body_coords:
         pygame.draw.rect(display_surface, DARKGREEN, body)
     head_rect = pygame.draw.rect(display_surface, GREEN, head_coord)
-    apple_coord = pygame.draw.rect(display_surface, RED, apple_coord)
+    apple_rect = pygame.draw.rect(display_surface, RED, apple_coord)
 
     # Update display and tick clock
     pygame.display.update()
